@@ -1,0 +1,74 @@
+{ 
+   "dns": { 
+     "servers": [ 
+       { 
+         "tag": "google", 
+         "address": "tcp://1.1.1.1" 
+       }, 
+       { 
+         "tag": "local", 
+         "address": "223.5.5.5", 
+         "detour": "direct" 
+       }, 
+       { 
+         "tag": "block", 
+         "address": "rcode://success" 
+       } 
+     ], 
+     "rules": [ 
+       { 
+         "outbound": "any", 
+         "server": "local" 
+       } 
+     ], 
+     "strategy": "ipv4_only" 
+   }, 
+   "inbounds": [ 
+    {
+       "type": "tun",
+       "inet4_address": "172.19.0.1/30",
+       "auto_route": true,
+       "strict_route": false,
+       "sniff": true
+     }
+
+   ], 
+    "outbounds": [
+    {
+      "type": "shadowsocks",
+      "server": "188.121.100.236",
+      "server_port": 8787,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "JVOaBUsmvqxrInNtJ/uFTA==:temprory1212"
+    },
+    { 
+       "type": "direct", 
+       "tag": "direct" 
+     }, 
+     { 
+       "type": "block", 
+       "tag": "block" 
+     }, 
+     { 
+       "type": "dns", 
+       "tag": "dns-out" 
+     } 
+   ], 
+   "route": { 
+     "rules": [ 
+       { 
+         "protocol": "dns", 
+         "outbound": "dns-out" 
+       },
+       {
+        "geosite": "category-ir",
+        "outbound": "direct"
+       },
+       { 
+         "domain_keyword": [".ir"], 
+         "outbound": "direct" 
+       } 
+     ], 
+     "auto_detect_interface": true 
+   } 
+ }
