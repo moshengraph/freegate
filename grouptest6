@@ -83,7 +83,7 @@
      },
     { 
        "type": "shadowsocks", 
-       "tag": "irancell"
+       "tag": "irancell",
        "method": "2022-blake3-aes-128-gcm", 
        "password": "RIXXrL4wqDM3RVKYmpECZw==", 
        "detour": "shadowtls-iran", 
