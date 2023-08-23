@@ -62,13 +62,13 @@
        "tag": "dns-out" 
      },
      {
-      "type": "urltest",
-      "tag": "proxy-auto",
+      "type": "selector",
+      "tag": "select",
       "outbounds": [
         "tuic",
         "ssh"
       ],
-      "tolerance": 5
+      "default": "ssh"
       }
     ],
     "route": { 
@@ -86,7 +86,7 @@
          "outbound": "direct" 
        } 
      ], 
-     "final": "proxy-auto",
+     "final": "select",
      "auto_detect_interface": true 
    },
    "experimental": {
