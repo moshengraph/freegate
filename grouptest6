@@ -134,7 +134,7 @@
         "hamrahaval",
         "irancell"
       ],
-      "default": "ssh"
+      "default": "tuic"
       }
     ],
     "route": { 
