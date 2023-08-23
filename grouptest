@@ -1,0 +1,98 @@
+{ 
+   "dns": { 
+     "servers": [ 
+       { 
+         "tag": "google", 
+         "address": "tcp://1.1.1.1" 
+       }, 
+       { 
+         "tag": "local", 
+         "address": "223.5.5.5", 
+         "detour": "direct" 
+       }, 
+       { 
+         "tag": "block", 
+         "address": "rcode://success" 
+       } 
+     ], 
+     "rules": [ 
+       { 
+         "outbound": "any", 
+         "server": "local" 
+       } 
+     ], 
+     "strategy": "ipv4_only" 
+   }, 
+   "inbounds": [ 
+    {
+       "type": "tun",
+       "inet4_address": "172.19.0.1/30",
+       "auto_route": true,
+       "strict_route": false,
+       "sniff": true
+     }
+   ],
+   "outbounds": [
+    {
+      "type": "shadowsocks",
+      "tag": "tuic",
+      "server": "box.goldenmesh.me",
+      "server_port": 8787,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "JVOaBUsmvqxrInNtJ/uFTA==:beAzCxUDEYpNdqpbDtJ9bQ=="
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "ssh",
+      "server": "box.goldenmesh.me",
+      "server_port": 8080,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "rgyzSGcy8t+tWwLDJrjhfg==:1tcrDxXvRS9+gzma0b0NKA=="
+    },
+    { 
+       "type": "direct", 
+       "tag": "direct" 
+     }, 
+     { 
+       "type": "block", 
+       "tag": "block" 
+     }, 
+     { 
+       "type": "dns", 
+       "tag": "dns-out" 
+     },
+     {
+      "type": "urltest",
+      "tag": "proxy-auto",
+      "outbounds": [
+        "tuic",
+        "ssh"
+      ],
+      "tolerance": 5
+      }
+    ],
+    "route": { 
+     "rules": [ 
+       { 
+         "protocol": "dns", 
+         "outbound": "dns-out" 
+       },
+       {
+        "geosite": "category-ir",
+        "outbound": "direct"
+       },
+       { 
+         "domain_keyword": [".ir"], 
+         "outbound": "direct" 
+       } 
+     ], 
+     "final": "proxy-auto",
+     "auto_detect_interface": true 
+   },
+   "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "dashboard"
+    }
+  }
+ }
