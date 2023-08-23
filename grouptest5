@@ -51,10 +51,10 @@
     },
     { 
        "type": "shadowsocks", 
-       "tag": "shadowtls",
+       "tag": "hamrahaval",
        "method": "2022-blake3-aes-128-gcm", 
        "password": "1Bk2kIrYnxjgRp7QsQX0aQ==", 
-       "detour": "shadowtls-out", 
+       "detour": "shadowtls-hamrah", 
        "multiplex": { 
          "enabled": true, 
          "max_connections": 4, 
@@ -67,7 +67,7 @@
      }, 
      { 
        "type": "shadowtls", 
-       "tag": "shadowtls-out", 
+       "tag": "shadowtls-hamrah", 
        "server": "195.201.228.121", 
        "server_port": 443, 
        "version": 3, 
@@ -75,6 +75,38 @@
        "tls": { 
          "enabled": true, 
          "server_name": "www.theverge.com", 
+         "utls": { 
+           "enabled": true, 
+           "fingerprint": "chrome" 
+         } 
+       } 
+     },
+    { 
+       "type": "shadowsocks", 
+       "tag": "irancell"
+       "method": "2022-blake3-aes-128-gcm", 
+       "password": "RIXXrL4wqDM3RVKYmpECZw==", 
+       "detour": "shadowtls-iran", 
+       "multiplex": { 
+         "enabled": true, 
+         "max_connections": 4, 
+         "min_streams": 4 
+       }, 
+       "udp_over_tcp":{ 
+         "enabled": true, 
+         "version": 2 
+       } 
+     }, 
+     { 
+       "type": "shadowtls", 
+       "tag": "shadowtls-iran", 
+       "server": "2a03:b0c0:3:d0::933:6001", 
+       "server_port": 443, 
+       "version": 3, 
+       "password": "rezamajazi6654", 
+       "tls": { 
+         "enabled": true, 
+         "server_name": "www.speedtest.net", 
          "utls": { 
            "enabled": true, 
            "fingerprint": "chrome" 
@@ -99,7 +131,8 @@
       "outbounds": [
         "tuic",
         "ssh",
-        "shadowtls"
+        "hamrahaval",
+        "irancell"
       ],
       "default": "ssh"
       }
