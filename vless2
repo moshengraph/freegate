@@ -37,7 +37,7 @@
       "type": "vless",
       "tag": "vless-out",
       "server": "box.goldenmesh.me",
-      "server_port": 5353,
+      "server_port": 8234,
       "uuid": "51068f05-49b5-44a4-831d-dd17030e687e",
       "network": "tcp"
     },
