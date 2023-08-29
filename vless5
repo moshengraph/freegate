@@ -39,7 +39,7 @@
       "server": "box.goldenmesh.me",
       "server_port": 8234,
       "uuid": "51068f05-49b5-44a4-831d-dd17030e687e",
-      "tcp_fast_open": true,
+      "tcp_fast_open": true
     },
     { 
        "type": "direct", 
