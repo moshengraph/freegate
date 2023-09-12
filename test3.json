@@ -51,10 +51,10 @@
      {
        "type": "shadowtls",
        "tag": "shadowtls-out",
-       "server": "91.107.167.208",
+       "server": "91.247.171.191",
        "server_port": 443,
        "version": 3,
-       "password": "temporary",
+       "password": "rozhinfalahati9101",
        "tls": {
          "enabled": true,
          "server_name": "glb-test.github.com",
