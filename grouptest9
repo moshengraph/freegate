@@ -185,6 +185,70 @@
          }
        }
      },
+     {
+       "type": "shadowsocks",
+       "tag": "shadowtls_v4_US",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==",
+       "detour": "shadowtls5",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 4,
+         "min_streams": 4
+       },
+       "udp_over_tcp":{
+         "enabled": true,
+         "version": 2
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "shadowtls5",
+       "server": "188.121.110.11",
+       "server_port": 443,
+       "version": 3,
+       "password": "temporary",
+       "tls": {
+         "enabled": true,
+         "server_name": "glb-test.github.com",
+         "utls": {
+           "enabled": true,
+           "fingerprint": "chrome"
+         }
+       }
+     },
+     {
+       "type": "shadowsocks",
+       "tag": "shadowtls_v6_US",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==",
+       "detour": "shadowtls6",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 4,
+         "min_streams": 4
+       },
+       "udp_over_tcp":{
+         "enabled": true,
+         "version": 2
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "shadowtls6",
+       "server": "2a01:4ff:f0:1b7b::1",
+       "server_port": 443,
+       "version": 3,
+       "password": "temporary",
+       "tls": {
+         "enabled": true,
+         "server_name": "glb-test.github.com",
+         "utls": {
+           "enabled": true,
+           "fingerprint": "chrome"
+         }
+       }
+     },
     { 
        "type": "direct", 
        "tag": "direct" 
@@ -207,7 +271,9 @@
         "shadowtls_arvan_rtt",
         "shadowtls_0-1_rtt",
         "shadowtls_v6",
-        "shadowtls_v4"
+        "shadowtls_v4",
+        "shadowtls_v6_US",
+        "shadowtls_v4_US"
       ],
       "default": "shadowtls_arvan_rtt"
       }
