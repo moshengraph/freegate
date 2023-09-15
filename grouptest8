@@ -209,7 +209,7 @@
         "shadowtls_v6",
         "shadowtls_v4"
       ],
-      "default": "tuic"
+      "default": "shadowtls_arvan_rtt"
       }
     ],
     "route": { 
