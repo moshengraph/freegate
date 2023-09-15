@@ -35,58 +35,98 @@
    "outbounds": [
     {
       "type": "shadowsocks",
-      "tag": "tuic",
+      "tag": "ss_tunnel_hy2",
       "server": "box.goldenmesh.me",
-      "server_port": 8787,
+      "server_port": 8686,
       "method": "2022-blake3-aes-128-gcm",
-      "password": "JVOaBUsmvqxrInNtJ/uFTA==:beAzCxUDEYpNdqpbDtJ9bQ=="
+      "password": "iqwcisJ/6onvzWBbPljWPA==:mqgPSIH6a2VDnQwTmcfNeQ=="
     },
     {
-      "type": "shadowsocks",
-      "tag": "ssh",
+      "type": "vless",
+      "tag": "vless_tunnel_hy2",
       "server": "box.goldenmesh.me",
-      "server_port": 8080,
-      "method": "2022-blake3-aes-128-gcm",
-      "password": "rgyzSGcy8t+tWwLDJrjhfg==:1tcrDxXvRS9+gzma0b0NKA=="
+      "server_port": 8474,
+      "uuid": "0c2763ee-63e2-48ae-8cf6-9c948213cbd1",
+      "tcp_fast_open": true
     },
-    { 
-       "type": "shadowsocks", 
-       "tag": "hamrahaval",
-       "method": "2022-blake3-aes-128-gcm", 
-       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==", 
-       "detour": "shadowtls-hamrah", 
-       "multiplex": { 
-         "enabled": true, 
-         "max_connections": 4, 
-         "min_streams": 4 
-       }, 
-       "udp_over_tcp":{ 
-         "enabled": true, 
-         "version": 2 
-       } 
-     }, 
-     { 
-       "type": "shadowtls", 
-       "tag": "shadowtls-hamrah", 
-       "server": "195.201.228.121", 
-       "server_port": 443, 
-       "version": 3, 
-       "password": "temporarytemp4499", 
-       "tls": { 
-         "enabled": true, 
-         "server_name": "www.theverge.com", 
-         "utls": { 
-           "enabled": true, 
-           "fingerprint": "chrome" 
-         } 
-       } 
+    {
+      "type": "vless",
+      "tag": "vless_tunnel_tuic",
+      "server": "box.goldenmesh.me",
+      "server_port": 8234,
+      "uuid": "ad7dabac-5853-4989-b040-c4b1b3563b4a",
+      "tcp_fast_open": true
+    },
+    {
+       "type": "shadowsocks",
+       "tag": "shadowtls_arvan_rtt",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==",
+       "detour": "shadowtls3",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 4,
+         "min_streams": 4
+       },
+       "udp_over_tcp":{
+         "enabled": true,
+         "version": 2
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "shadowtls3",
+       "server": "188.121.110.11",
+       "server_port": 443,
+       "version": 3,
+       "password": "temporary",
+       "tls": {
+         "enabled": true,
+         "server_name": "glb-test.github.com",
+         "utls": {
+           "enabled": true,
+           "fingerprint": "chrome"
+         }
+       }
+     },
+    {
+       "type": "shadowsocks",
+       "tag": "shadowtls_0-1_rtt",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==",
+       "detour": "shadowtls4",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 4,
+         "min_streams": 4
+       },
+       "udp_over_tcp":{
+         "enabled": true,
+         "version": 2
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "shadowtls4",
+       "server": "188.121.110.11",
+       "server_port": 443,
+       "version": 3,
+       "password": "temporary",
+       "tls": {
+         "enabled": true,
+         "server_name": "glb-test.github.com",
+         "utls": {
+           "enabled": true,
+           "fingerprint": "chrome"
+         }
+       }
      },
     { 
        "type": "shadowsocks", 
-       "tag": "irancell",
+       "tag": "shadowtls_v6",
        "method": "2022-blake3-aes-128-gcm", 
        "password": "RIXXrL4wqDM3RVKYmpECZw==", 
-       "detour": "shadowtls-iran", 
+       "detour": "shadowtls1", 
        "multiplex": { 
          "enabled": true, 
          "max_connections": 4, 
@@ -99,11 +139,11 @@
      }, 
      { 
        "type": "shadowtls", 
-       "tag": "shadowtls-iran", 
+       "tag": "shadowtls1", 
        "server": "2a03:b0c0:3:d0::933:6001", 
        "server_port": 443, 
        "version": 3, 
-       "password": "rezamajazi6654", 
+       "password": "goldenhat", 
        "tls": { 
          "enabled": true, 
          "server_name": "www.speedtest.net", 
@@ -112,6 +152,38 @@
            "fingerprint": "chrome" 
          } 
        } 
+     },
+    {
+       "type": "shadowsocks",
+       "tag": "shadowtls_v4",
+       "method": "2022-blake3-aes-128-gcm",
+       "password": "1Bk2kIrYnxjgRp7QsQX0aQ==",
+       "detour": "shadowtls2",
+       "multiplex": {
+         "enabled": true,
+         "max_connections": 4,
+         "min_streams": 4
+       },
+       "udp_over_tcp":{
+         "enabled": true,
+         "version": 2
+       }
+     },
+     {
+       "type": "shadowtls",
+       "tag": "shadowtls2",
+       "server": "91.107.167.208",
+       "server_port": 443,
+       "version": 3,
+       "password": "aidinalmasi6468",
+       "tls": {
+         "enabled": true,
+         "server_name": "glb-test.github.com",
+         "utls": {
+           "enabled": true,
+           "fingerprint": "chrome"
+         }
+       }
      },
     { 
        "type": "direct", 
@@ -129,10 +201,13 @@
       "type": "selector",
       "tag": "select",
       "outbounds": [
-        "tuic",
-        "ssh",
-        "hamrahaval",
-        "irancell"
+        "ss_tunnel_hy2",
+        "vless_tunnel_hy2",
+        "vless_tunnel_tuic",
+        "shadowtls_arvan_rtt",
+        "shadowtls_0-1_rtt",
+        "shadowtls_v6",
+        "shadowtls_v4"
       ],
       "default": "tuic"
       }
