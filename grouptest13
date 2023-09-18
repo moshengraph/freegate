@@ -282,7 +282,7 @@
      "rules": [ 
        { 
          "protocol": "dns", 
-         "outbound": "shadowtls_arvan_rtt" 
+         "outbound": "d" 
        },
        {
         "geosite": "category-ir",
