@@ -282,7 +282,7 @@
      "rules": [ 
        { 
          "protocol": "dns", 
-         "outbound": "d" 
+         "outbound": "dns-out" 
        },
        {
         "geosite": "category-ir",
