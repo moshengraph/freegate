@@ -21,7 +21,7 @@
          "server": "local" 
        } 
      ], 
-     "strategy": "ipv4_only" 
+     "strategy": "prefer_ipv6" 
    }, 
    "inbounds": [ 
     {
